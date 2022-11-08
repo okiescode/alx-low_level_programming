@@ -5,7 +5,7 @@
  * str_concat - concatenates 2 strings
  *
  *  @s1: first string
- *  @s2: string to add to end of first string
+ *  @s2: string to add to end of of first string
  *
  *  Return: pointer to newly allocated string concatenation
  */
