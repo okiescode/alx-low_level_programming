@@ -2,7 +2,7 @@
 
 /**
  * main - multiplies two numbers followed by newline or
- * nprint Error if prigram does not recieve teo arguments
+ *nprint Error if prigram does not recieve teo arguments
  * @argc: argument count
  *
  * Return: 0(success) or 1 if not two arguments
