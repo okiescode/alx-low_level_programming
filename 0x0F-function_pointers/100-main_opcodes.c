@@ -1,20 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - A program that prints the opcodes of its own main function.
- * Usage: ./main number_of_byte
- * @argc: The number of arguments supplied to the program.
- * @argv: An array of pointers to the arguments.
- *
- * Return: Always 0.
- */
-
+  *main - print opcodes of a given machine.
+  *@argc: number of arguments.
+  *@argv: argument vector.
+  *
+  *Return: 0.
+  */
 int main(int argc, char *argv[])
 {
-	int nbytes, index;
-	unsigned char opcodes;
-	int (*add)(int, char **) = main;
+	int count, bytes;
 
 	if (argc != 2)
 	{
@@ -22,26 +17,20 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	nbytes = atoi(argv[1]);
-
-	if (nbytes < 0)
+	bytes = atoi(argv[1]);
+	if (bytes < 0)
 	{
 		printf("Error\n");
 		exit(2);
 	}
 
-	for (index = 0; index < nbytes; index++)
+	for (count = 0; count < bytes; count++)
 	{
-		opcodes = *(unsigned char *)add;
-		printf("%.2x", opcodes);
-
-		if (index == nbytes - 1)
-			continue;
-		printf(" ");
-
-		add++;
+		printf("%02hhx", *((char *)main + count));
+		if (count  < bytes - 1)
+			printf(" ");
+		else
+			printf("\n");
 	}
-	printf("\n");
-
 	return (0);
 }
